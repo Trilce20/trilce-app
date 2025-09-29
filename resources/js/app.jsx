@@ -1,10 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import router from "./router";
+import { Outlet } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById("app")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+export default function App() {
+  return (
+    <div>
+      <header className="p-4 bg-blue-600 text-white">
+        <h1>Trilce</h1>
+      </header>
+
+      <main className="p-6">
+        <Outlet /> {/* Aquí se renderizan Home, Colegio, Academia */}
+      </main>
+
+      <footer className="p-4 bg-gray-800 text-white text-center">
+        © 2025 Trilce
+      </footer>
+    </div>
+  );
+}
